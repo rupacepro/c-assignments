@@ -1,0 +1,15 @@
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\bin\Debug\net8.0\AssignmentThree.exe
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\bin\Debug\net8.0\AssignmentThree.deps.json
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\bin\Debug\net8.0\AssignmentThree.runtimeconfig.json
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\bin\Debug\net8.0\AssignmentThree.dll
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\bin\Debug\net8.0\AssignmentThree.pdb
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\obj\Debug\net8.0\AssignmentThree.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\obj\Debug\net8.0\AssignmentThree.AssemblyInfoInputs.cache
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\obj\Debug\net8.0\AssignmentThree.AssemblyInfo.cs
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\obj\Debug\net8.0\AssignmentThree.csproj.CoreCompileInputs.cache
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\obj\Debug\net8.0\AssignmentThree.sourcelink.json
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\obj\Debug\net8.0\AssignmentThree.dll
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\obj\Debug\net8.0\refint\AssignmentThree.dll
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\obj\Debug\net8.0\AssignmentThree.pdb
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\obj\Debug\net8.0\AssignmentThree.genruntimeconfig.cache
+C:\Users\rupac\Desktop\Second Semester\c#\assignments\AssignmentThree\AssignmentThree\obj\Debug\net8.0\ref\AssignmentThree.dll
