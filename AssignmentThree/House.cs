@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//Name: Rupesh Shrestha(C0908441)
+//Date: 2024 - 03 - 29
 
 namespace AssignmentThree
 {
@@ -32,7 +29,8 @@ namespace AssignmentThree
 
         public House() { }
 
-        public House(String garage, String type, String condition)
+        public House(double price, double squareFeet, int yearBuilt, Address address, String garage, String type, String condition)
+            : base(price, squareFeet, yearBuilt, address)
         {
             _garage = garage;
             _type = type;   
@@ -41,7 +39,7 @@ namespace AssignmentThree
 
         public override string ToString()
         {
-            return $"Garage: {_garage}\nType: {_type}\nCondition: {_condition}";
+            return $"{base.ToString()}\nGarage: {_garage}\nType: {_type}\nCondition: {_condition}\nTotal Commission: ${CalculateCommission():F2}";
         }
 
         public override double CalculateCommission()

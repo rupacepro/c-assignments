@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//Name: Rupesh Shrestha(C0908441)
+//Date: 2024 - 03 - 29
 
 namespace AssignmentThree
 {
@@ -37,7 +34,8 @@ namespace AssignmentThree
             _parking = "No";
         }
 
-        public Condo(int unit, int floor, String parking)
+        public Condo(double price, double squareFeet, int yearBuilt, Address address, int unit, int floor, String parking)
+            : base(price, squareFeet, yearBuilt, address)
         {
             _unit = unit;
             _floor = floor;
@@ -46,7 +44,7 @@ namespace AssignmentThree
 
         public override string ToString()
         {
-            return $"Unit: {_unit}\nFloor: {_floor}\nParking:{_parking}";
+            return $"{base.ToString()}\nUnit: {_unit}\nFloor: {_floor}\nParking:{_parking}\nTotal Commission: ${CalculateCommission():F2}";
         }
 
         public override double CalculateCommission()

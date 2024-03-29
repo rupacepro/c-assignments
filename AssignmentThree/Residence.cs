@@ -61,6 +61,6 @@ public abstract class Residence
     //Override ToString method to display residence info
     public override string ToString()
     {
-        return $"Price: {_price}\nYear Built: {YearBuilt}\nSquare Feet: {SquareFeet}\n{_address.ToString()}";
+        return $"Price: ${_price}\nYear Built: {YearBuilt}\nSquare Feet: {SquareFeet}\n{_address.ToString()}";
     }
 }

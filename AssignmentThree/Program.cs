@@ -18,16 +18,20 @@ class Program
             {
                 House house = GetHouseObject();
                 houses.Add(house);
-                Console.WriteLine("A house is added to the list!!");
                 Console.WriteLine("------------------------------\n");
+                Console.WriteLine("A house is added to the list!!");
+                Console.WriteLine($"House Info: \n\n{house.ToString()}");
+                Console.WriteLine("----------------------------------\n");
                 choice = Menu();
                 continue;
             }
             else if (choice == 2)
             {
-                Condo Appartment = GetApartmentObject();
-                apartments.Add(Appartment);
+                Condo appartment = GetApartmentObject();
+                apartments.Add(appartment);
+                Console.WriteLine("------------------------------\n");
                 Console.WriteLine("An apartment is added to the list!!");
+                Console.WriteLine($"House Info: \n\n{appartment.ToString()}");
                 Console.WriteLine("----------------------------------\n");
                 choice = Menu();
                 continue;
@@ -45,8 +49,42 @@ class Program
 
     public static House GetHouseObject()
     {
+        //Initialize variables to store residence components
+        double price = 0;
+        double squareFeet = 0;
+        int yearBuilt = 2000;
+        bool isValid = false;
+
         String garage, type, condition;
-        Console.WriteLine("Enter a house information: ");
+        Console.WriteLine("Enter the house information: ");
+        Console.WriteLine("-------------");
+        //Create a valid Address object 
+        Address address = GetValidAddress();
+
+        // Prompt the user for residence information until a valid residence is entered
+        do
+        {
+            Console.Write("Enter price: ");
+            isValid = double.TryParse(Console.ReadLine(), out price);
+            if (!isValid || price < 0)
+                Console.WriteLine("Please enter a valid price.");
+        } while (!isValid || price < 0);
+
+        do
+        {
+            Console.Write("Enter square feet: ");
+            isValid = double.TryParse(Console.ReadLine(), out squareFeet);
+            if (!isValid || squareFeet < 0)
+                Console.WriteLine("Please enter a valid square feet value!");
+        } while (!isValid || squareFeet < 0);
+
+        do
+        {
+            Console.Write("Enter year built: ");
+            isValid = int.TryParse(Console.ReadLine(), out yearBuilt);
+            if (!isValid || yearBuilt < 1900 || yearBuilt > DateTime.Now.Year)
+                Console.WriteLine($"Please enter a valid year!");
+        } while (!isValid || yearBuilt <= 1900 || yearBuilt > DateTime.Now.Year);
         do
         {
             Console.WriteLine("Does it have garage ? yes or no?: ");
@@ -72,15 +110,48 @@ class Program
                 Console.WriteLine("Invalid input!! Enter 'for sale' or 'for rent'.");
         } while (condition != "for sale" && condition != "for rent");
 
-        return new House(garage, type, condition);
+        return new House(price, squareFeet, yearBuilt, address, garage, type, condition);
     }
 
     public static Condo GetApartmentObject()
     {
+        //Initialize variables to store residence components
+        double price = 0;
+        double squareFeet = 0;
+        int yearBuilt = 2000;
+        bool isValid = false;
+
         int unit, floor;
-        bool isValid;
         String parking;
         Console.WriteLine("Enter an apartment information: ");
+        Console.WriteLine("-------------");
+        //Create a valid Address object 
+        Address address = GetValidAddress();
+
+        // Prompt the user for residence information until a valid residence is entered
+        do
+        {
+            Console.Write("Enter price: ");
+            isValid = double.TryParse(Console.ReadLine(), out price);
+            if (!isValid || price < 0)
+                Console.WriteLine("Please enter a valid price.");
+        } while (!isValid || price < 0);
+
+        do
+        {
+            Console.Write("Enter square feet: ");
+            isValid = double.TryParse(Console.ReadLine(), out squareFeet);
+            if (!isValid || squareFeet < 0)
+                Console.WriteLine("Please enter a valid square feet value!");
+        } while (!isValid || squareFeet < 0);
+
+        do
+        {
+            Console.Write("Enter year built: ");
+            isValid = int.TryParse(Console.ReadLine(), out yearBuilt);
+            if (!isValid || yearBuilt < 1900 || yearBuilt > DateTime.Now.Year)
+                Console.WriteLine($"Please enter a valid year!");
+        } while (!isValid || yearBuilt <= 1900 || yearBuilt > DateTime.Now.Year);
         do
         {
             Console.WriteLine("Enter the apartment Unit number: ");
@@ -106,7 +177,7 @@ class Program
         } while (parking != "yes" && parking != "no");
 
 
-        return new Condo(unit, floor, parking);
+        return new Condo(price, squareFeet, yearBuilt, address, unit, floor, parking);
     }
 
     public static int Menu()
@@ -127,5 +198,37 @@ class Program
 
 
         return choice;
+    }
+
+    // Method to prompt user for address information until a valid address is entered
+    public static Address GetValidAddress()
+    {
+        string street = "";
+        string city = "";
+        string region = "";
+        string postalCode = "";
+
+        while (string.IsNullOrWhiteSpace(street) || street.Length < 3)
+        {
+            Console.WriteLine("Enter valid Street Name: ");
+            street = Console.ReadLine();
+        }
+        while (string.IsNullOrWhiteSpace(city) || city.Length < 3)
+        {
+            Console.WriteLine("Enter valid Municipality Name: ");
+            city = Console.ReadLine();
+        }
+        while (string.IsNullOrWhiteSpace(region) || region.Length < 3)
+        {
+            Console.WriteLine("Enter valid Region Name: ");
+            region = Console.ReadLine();
+        }
+
+        while (postalCode.Length != 6)
+        {
+            Console.WriteLine("Enter 6 character Postal Code: ");
+            postalCode = Console.ReadLine();
+        }
+        return new Address(street, city, region, postalCode);
     }
 }
